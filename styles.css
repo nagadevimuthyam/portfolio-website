@@ -449,6 +449,30 @@ img {
   transform: translateY(-6px);
 }
 
+/* -------- GitHub Repo Link Style -------- */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 15px;
+  padding: 8px 14px;
+  border: 1px solid #fed700;
+  border-radius: 6px;
+  color: #fed700;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.project-link i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.project-link:hover {
+  background: #fed700;
+  color: #202020;
+}
+
 /* ---------------- Certifications ---------------- */
 
 .certifications {
