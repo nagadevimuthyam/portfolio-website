@@ -423,36 +423,51 @@ img {
   gap: 30px;
 }
 
+/* Project Card */
 .project {
   flex-basis: 48%;
   background: #2a2a2a;
   padding: 25px;
   border-radius: 10px;
   border: 1px solid #444;
-  transition: 0.3s;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  transition: 0.3s ease-in-out;
 }
 
+/* Stagger animation delay */
+.project:nth-child(1) { animation-delay: 0.1s; }
+.project:nth-child(2) { animation-delay: 0.2s; }
+.project:nth-child(3) { animation-delay: 0.3s; }
+.project:nth-child(4) { animation-delay: 0.4s; }
+
+/* Icon (simple, minimal, modern) */
 .project i {
-  background: #fed700;
-  color: #202020;
-  font-size: 26px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  line-height: 60px;
-  text-align: center;
-  margin-bottom: 20px;
+  color: #fed700;
+  font-size: 30px;
+  margin-bottom: 10px;
+  display: block;
+  transition: 0.3s ease-in-out;
 }
 
+/* Hover Card */
 .project:hover {
+  transform: translateY(-8px);
   border-color: #fed700;
-  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(254, 215, 0, 0.25);
 }
 
-/* -------- GitHub Repo Link Style -------- */
+/* Icon Glow Hover */
+.project i:hover {
+  color: #fff;
+  text-shadow: 0 0 12px #fed700;
+}
+
+/* -------- GitHub View Source Button -------- */
 .project-link {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   margin-top: 15px;
   padding: 8px 14px;
   border: 1px solid #fed700;
@@ -460,18 +475,41 @@ img {
   color: #fed700;
   font-weight: 600;
   font-size: 14px;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-link i {
-  margin-right: 8px;
   font-size: 18px;
 }
 
 .project-link:hover {
   background: #fed700;
   color: #202020;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(254, 215, 0, 1);
 }
+
+/* Fade-in animation on scroll load */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive: For mobile (Cards full width instead of 2 per row) */
+@media (max-width: 768px) {
+  .project {
+    flex-basis: 100%;
+  }
+}
+
 
 /* ---------------- Certifications ---------------- */
 
